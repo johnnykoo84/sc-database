@@ -58,13 +58,16 @@ conn.commit()
 query_1 = "SELECT COUNT(*) FROM demo;"
 result_1 = curs.execute(query_1).fetchone()
 print('result_1: ', result_1)
+# output: result_1:  (3,)
 
 query_2 = """
     SELECT COUNT(*) FROM demo d WHERE d.x >= 5 AND d.y >= 5;
     """
 result_2 = curs.execute(query_2).fetchone()
 print('result_2: ', result_2)
+# output: result_2:  (2,)
 
 query_3 = "SELECT COUNT(DISTINCT y) FROM demo"
 result_3 = curs.execute(query_3).fetchone()
 print('result_3: ', result_3)
+# output: result_3:  (2,)

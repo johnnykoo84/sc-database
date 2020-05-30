@@ -17,6 +17,10 @@ query_1 = """
 
 result_1 = curs.execute(query_1).fetchall()
 print('question 1: ', result_1)
+""" output
+[('Geitost',), ('Guaraná Fantástica',), ('Konbu',), ('Filo Mix',), ('Tourtière',), ('Rhönbräu Klosterbier',), ('Tunnbröd',), ('Teatime Chocolate Biscuits',), ('Zaanse koeken',), ('Rogede sild',)]
+"""
+
 
 query_2 = """
     SELECT AVG(strftime('%Y', 'now') - strftime('%Y', BirthDate)) 
@@ -27,6 +31,8 @@ query_2 = """
 result_2 = curs.execute(query_2).fetchone()
 str = float(''.join(str(ele) for ele in result_2))
 print('\nquestion 2: ', f'{str:.2f}')
+# output: 31.22
+
 
 """
 Part 3
@@ -46,7 +52,9 @@ query_4 = """
 
 result_4 = curs.execute(query_4).fetchall()
 print('result_4: ', result_4)
-
+""" output
+result_4:  [('Geitost', 'Norske Meierier'), ('Guaraná Fantástica', 'Refrescos Americanas LTDA'), ('Konbu', "Mayumi's"), ('Filo Mix', "G'day, Mate"), ('Tourtière', 'Ma Maison'), ('Rhönbräu Klosterbier', 'Plutzer Lebensmittelgroßmärkte AG'), ('Tunnbröd', 'PB Knäckebröd AB'), ('Teatime Chocolate Biscuits', 'Specialty Biscuits, Ltd.'), ('Zaanse koeken', 'Zaanse Snoepfabriek'), ('Rogede sild', 'Lyngbysild')]
+"""
 query_5 = """
         SELECT p.ProductName, COUNT(DISTINCT p.ProductName) FROM Product p
         INNER JOIN Category c on p.CategoryId = c.id
@@ -55,7 +63,7 @@ query_5 = """
 
 result_5 = curs.execute(query_5).fetchone()
 print('result 5', result_5)
-
+# output: result 5 ('Pavlova', 13)
 
 """
 In the Northwind database, what is the type of relationship between the Employee and Territory tables?
