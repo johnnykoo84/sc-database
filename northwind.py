@@ -55,3 +55,16 @@ query_5 = """
 
 result_5 = curs.execute(query_5).fetchone()
 print('result 5', result_5)
+
+
+"""
+In the Northwind database, what is the type of relationship between the Employee and Territory tables?
+answer) many to many relationship, or M:N
+
+What is a situation where a document store (like MongoDB) is appropriate, and what is a situation where it is not appropriate?
+answer) If you stores tons of logs data (e.g. error log from server application), a document store is very appropriate, however 
+if you want to store some type of very trustworthy and transactional data like wiretransfer in bank, a document store is not a very good idea.
+
+What is "NewSQL", and what is it trying to achieve?
+answer) a class of relational database management systems that seek to provide the scalability of NoSQL systems for online transaction processing (OLTP) workloads while maintaining the ACID guarantees of a traditional database system - wiki
+"""
